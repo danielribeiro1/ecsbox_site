@@ -1,0 +1,89 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --accent: #1d4ed8;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.page {
+  max-width: 880px;
+  margin: 2.5rem auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+}
+
+.hero {
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0;
+  padding: 0.2rem 0.6rem;
+  background: #eff6ff;
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0.6rem 0 0.2rem;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+section {
+  padding-top: 0.8rem;
+  margin-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+ul,
+ol {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+}
+
+footer {
+  margin-top: 1.4rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+  .page {
+    margin: 1rem;
+    padding: 1.1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
