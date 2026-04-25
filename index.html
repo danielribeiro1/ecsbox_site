@@ -1,69 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tutorial Suplementar</title>
+    <title>ECS_Box - Complete Tutorial</title>
     <meta
       name="description"
-      content="Tutorial suplementar para reprodução de experimento científico."
+      content="Complete tutorial for assembly and configuration of the ECS_Box (Electrical Central System Box), a centralized power distribution system for robots."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="page">
       <header class="hero">
-        <p class="badge">Material Suplementar</p>
-        <h1>Tutorial de Reprodução</h1>
+        <p class="badge">Centralized Power System</p>
+        <h1>ECS_Box - Complete Tutorial</h1>
         <p class="subtitle">
-          Esta página descreve o passo a passo para reproduzir os resultados do estudo.
+          Step-by-step guide for assembly and configuration of the centralized power distribution system for robots.
         </p>
       </header>
 
       <section>
-        <h2>1. Requisitos</h2>
+        <h2>Overview</h2>
+        <p>
+          Powering a complex robot often means wrestling with multiple battery voltages, messy wiring, and no easy way to safely switch individual components on or off. The <strong>ECS_Box</strong> (Electrical Central System Box) solves this by centralizing all power conversion and distribution into one modular enclosure.
+        </p>
+        <p>
+          It takes a battery input and provides regulated outputs at the exact voltages required by each robot component, reducing cable clutter and making troubleshooting dramatically simpler.
+        </p>
+        <img src="images/ecs_box.jpeg" alt="ECS_Box - Electrical Central System Box" style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px;">
+        <p style="text-align: center; font-style: italic; color: #666; margin-top: -10px; font-size: 0.9em;">Figure 1: The complete ECS_Box system</p>
+      </section>
+
+      <section>
+        <h2>Robot Requirements and Specifications</h2>
+        <p>
+          First of all, it's necessary to understand your components electrical specifications (voltage, current, and power consumption). Getting all this data is essential for the diagrams and for choosing the correct voltage converter for each component.
+        </p>
+        <p>
+          <strong>Important recommendations:</strong>
+        </p>
         <ul>
-          <li>Sistema operacional compatível (Linux, macOS ou Windows).</li>
-          <li>Dependências instaladas conforme descrito no artigo.</li>
-          <li>Acesso aos dados e scripts suplementares.</li>
+          <li>Consult the datasheets for each component</li>
+          <li>Record the nominal voltage required for each device</li>
+          <li>Calculate the maximum current consumption of each component</li>
+          <li>Sum the consumptions to determine the total battery capacity required</li>
+          <li>Search for the correct voltage converters for each component</li>
         </ul>
+        <img src="images/diagram.png" alt="Electrical diagram with voltages and converters" style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px;">
+        <p style="text-align: center; font-style: italic; color: #666; margin-top: -10px; font-size: 0.9em;">Figure 2: Electrical specifications diagram showing voltages and converters</p>
       </section>
 
       <section>
-        <h2>2. Preparação do Ambiente</h2>
-        <ol>
-          <li>Baixe os arquivos suplementares do repositório informado no artigo.</li>
-          <li>Crie um ambiente isolado para execução.</li>
-          <li>Instale as dependências listadas na documentação do projeto.</li>
-        </ol>
-      </section>
-
-      <section>
-        <h2>3. Execução</h2>
-        <ol>
-          <li>Execute o script principal com os parâmetros padrão.</li>
-          <li>Gere os resultados intermediários e salve em pasta dedicada.</li>
-          <li>Rode o script de análise para produzir métricas e figuras finais.</li>
-        </ol>
-      </section>
-
-      <section>
-        <h2>4. Verificação</h2>
+        <h2>Mounting and Assembly</h2>
+        
+        <h3>Power Module Interface (PMI)</h3>
         <p>
-          Compare os artefatos gerados (tabelas, métricas e figuras) com os resultados
-          reportados no artigo. Diferenças pequenas podem ocorrer por variações de ambiente.
+          As a starting point of the mounting step, it's important to understand and manufacture the <strong>Power Module Interface (PMI)</strong> of the ECS_Box. The PMI is a 3D-printed interface that serves as an on/off switch and overcurrent protection for each component, allowing modularity and selectiveness of this stack.
         </p>
-      </section>
-
-      <section>
-        <h2>5. Citação</h2>
         <p>
-          Para citação, utilize os dados bibliográficos apresentados no manuscrito submetido.
+          Just like any other 3D-printed component, the PMI is completely customizable and must meet the specifications of your project. It can have any shape and size desired to fit your robot's condition and structure.
         </p>
+        <img src="images/PMI.jpeg" alt="Power Module Interface - PMI" style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px;">
+        <p style="text-align: center; font-style: italic; color: #666; margin-top: -10px; font-size: 0.9em;">Figure 3: Power Module Interface (PMI) - 3D printed component for on/off control and overcurrent protection</p>
+        
+        <h3>Step-by-Step Assembly Process</h3>
+        <ol>
+          <li><strong>Design and 3D-print the Power Module Interface (PMI)</strong> to fit your robot's form factor and electrical requirements. Shape and size are fully customisable.</li>
+          <li><strong>Select a perforated plate</strong> as the base for your first prototype — it simplifies soldering positions and supports clean cable routing.</li>
+          <li><strong>Mount all voltage converters</strong> onto the perforated plate, positioned so their output cables reach the PMI cleanly.</li>
+          <li><strong>Run cables from the battery input</strong> to each converter, routing them through the plate to the rear side where management space is available.</li>
+          <li><strong>Connect converter outputs to the PMI</strong>, then route PMI outputs to their respective robot components.</li>
+          <li><strong>Terminate all shared connections</strong> at the rear using WAGO push-in connectors — these keep the system modular and allow easy reconfiguration.</li>
+        </ol>
       </section>
 
       <footer>
-        <p>Versão do tutorial: 1.0</p>
+        <p>ECS_Box Tutorial - Version 1.0</p>
       </footer>
     </main>
   </body>
